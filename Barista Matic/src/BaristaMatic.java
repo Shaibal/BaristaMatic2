@@ -1,6 +1,3 @@
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
 public class BaristaMatic {
 
 	// Singleton Constructor
@@ -18,9 +15,8 @@ public class BaristaMatic {
 	}
 
 	// End of Constructor
-
-	private static Scanner userInput = new Scanner(System.in);
-
+	GetInput inputObject = new GetInput();
+	
 	private static Inventory coffeeInventory = Inventory.getInstance();
 
 	private static Ingredient[] ingredients = coffeeInventory.getIngredients();
@@ -57,18 +53,18 @@ public class BaristaMatic {
 
 	public void handleCustomer() {
 
-		String input = getUserInput();
+		String userInput = inputObject.getUserInput();
 		boolean takeInput = true;
 
 		do {
-			switch (input) {
+			switch (userInput) {
 			case "r":
 				restockMachine();
-				input = getUserInput();
+				userInput = inputObject.getUserInput();
 				break;
 			case "R":
 				restockMachine();
-				input = getUserInput();
+				userInput = inputObject.getUserInput();
 				break;
 			case "q":
 				takeInput = false;
@@ -77,46 +73,39 @@ public class BaristaMatic {
 				takeInput = false;
 				break;
 			case "1":
-				handleOrder(itemArray[Integer.parseInt(input) - 1]);
-				input = getUserInput();
+				handleOrder(itemArray[Integer.parseInt(userInput) - 1]);
+				userInput = inputObject.getUserInput();
 				break;
 			case "2":
-				handleOrder(itemArray[Integer.parseInt(input) - 1]);
-				input = getUserInput();
+				handleOrder(itemArray[Integer.parseInt(userInput) - 1]);
+				userInput = inputObject.getUserInput();
 				break;
 			case "3":
-				handleOrder(itemArray[Integer.parseInt(input) - 1]);
-				input = getUserInput();
+				handleOrder(itemArray[Integer.parseInt(userInput) - 1]);
+				userInput = inputObject.getUserInput();
 				break;
 			case "4":
-				handleOrder(itemArray[Integer.parseInt(input) - 1]);
-				input = getUserInput();
+				handleOrder(itemArray[Integer.parseInt(userInput) - 1]);
+				userInput = inputObject.getUserInput();
 				break;
 			case "5":
-				handleOrder(itemArray[Integer.parseInt(input) - 1]);
-				input = getUserInput();
+				handleOrder(itemArray[Integer.parseInt(userInput) - 1]);
+				userInput = inputObject.getUserInput();
 				break;
 			case "6":
-				handleOrder(itemArray[Integer.parseInt(input) - 1]);
-				input = getUserInput();
+				handleOrder(itemArray[Integer.parseInt(userInput) - 1]);
+				userInput = inputObject.getUserInput();
 				break;
 			default:
-				System.out.println("\nInvalid selection: " + input + "\n");
+				System.out.println("\nInvalid selection: \"" + userInput + "\"\n");
 				printInventoryAndMenu();
-				input = getUserInput();
+				userInput = inputObject.getUserInput();
 				break;
 			}
 		} while (takeInput);
 
 	}
 
-	private static String getUserInput() {
-		try {
-			return userInput.next();
-		} catch (InputMismatchException e) {
-			return e.getMessage();
-		}
-	}
 
 	/**
 	 * Restocks the ingredients of coffee machine to maximum default value
