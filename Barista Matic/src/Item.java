@@ -1,3 +1,9 @@
+/**
+ * Provides different Item objects
+ * @author Shaibal Saha
+ * 3/21/2015
+ */
+
 import java.text.DecimalFormat;
 import java.util.*;
 

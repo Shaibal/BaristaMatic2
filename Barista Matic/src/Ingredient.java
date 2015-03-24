@@ -1,4 +1,10 @@
+/**
+ * provides superclass for different ingredients
+ * @author Shaibal Saha
+ * 3/23/2015
+ */
 abstract public class Ingredient {
+	
 	private final int DEFAULT_UNITS = 10;
 	String name;
 	int units;

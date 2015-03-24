@@ -1,6 +1,7 @@
 /**
- * Shaibal Saha
  * Barista-Matic Problem Solution for Trustwave interview round 3
+ * Provides the main method.
+ * @author Shaibal Saha
  * 3/21/2015
  */
 

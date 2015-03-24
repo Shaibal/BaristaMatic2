@@ -1,3 +1,9 @@
+/**
+ * Provides the menu and inventory.
+ * Handles customer order
+ * @author Shaibal Saha
+ * 3/21/2015
+ */
 public class BaristaMatic {
 
 	// Singleton Constructor
